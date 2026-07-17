@@ -1,0 +1,48 @@
+using System;
+
+delegate void Operation(int a, int b);
+
+class Calculator
+{
+    public void Add(int a, int b)
+    {
+        Console.WriteLine("Addition = " + (a + b));
+    }
+
+    public void Subtract(int a, int b)
+    {
+        Console.WriteLine("Subtraction = " + (a - b));
+    }
+
+    public void Multiply(int a, int b)
+    {
+        Console.WriteLine("Multiplication = " + (a * b));
+    }
+
+    public void Divide(int a, int b)
+    {
+        Console.WriteLine("Division = " + (a / b));
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Calculator c = new Calculator();
+
+        Operation opAdd = c.Add;
+        opAdd(20, 10);
+
+        Operation opSub = c.Subtract;
+        opSub(30, 10);
+
+        Operation opMul = c.Multiply;
+        opMul(10, 5);
+
+        Operation opDiv = c.Divide;
+        opDiv(10, 5);
+
+        Console.WriteLine("Vijaylaxmi Vishwakarma");
+    }
+}
